@@ -1,3 +1,4 @@
+
 export const en = {
   general: {
     languageName: "English"
@@ -32,6 +33,15 @@ export const en = {
     databasesDesc: "Working with various database technologies from MySQL to Redis, Elasticsearch, and MongoDB for different use cases.",
     architecture: "Architecture",
     architectureDesc: "Implementing advanced software architecture patterns like Domain-Driven Design (DDD), CQRS, and event-driven design."
+  },
+  experience: {
+    title: "Professional Experience",
+    responsibilities: "Responsibilities",
+    presentLabel: "Present"
+  },
+  education: {
+    title: "Education",
+    degree: "Degree"
   },
   projects: {
     title: "Side Projects",

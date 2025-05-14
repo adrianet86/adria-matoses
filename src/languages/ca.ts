@@ -1,3 +1,4 @@
+
 export const ca = {
   general: {
     languageName: "Català"
@@ -32,6 +33,15 @@ export const ca = {
     databasesDesc: "Treball amb diverses tecnologies de bases de dades des de MySQL fins a Redis, Elasticsearch i MongoDB per a diferents casos d'ús.",
     architecture: "Arquitectura",
     architectureDesc: "Implementació de patrons avançats d'arquitectura de software com Domain-Driven Design (DDD), CQRS i disseny basat en esdeveniments."
+  },
+  experience: {
+    title: "Experiència Professional",
+    responsibilities: "Responsabilitats",
+    presentLabel: "Present"
+  },
+  education: {
+    title: "Educació",
+    degree: "Titulació"
   },
   projects: {
     title: "Side Projects",
