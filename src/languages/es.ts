@@ -12,25 +12,27 @@ export const es = {
   },
   hero: {
     greeting: "Hola, me llamo",
-    jobTitle: "Desarrollo soluciones para la web.",
-    passion: "Creando experiencias de usuario hermosas",
-    currentlyLearning: "Arquitectura Cloud",
-    description: "Soy un ingeniero de software especializado en crear experiencias digitales excepcionales. Actualmente, estoy enfocado en desarrollar productos accesibles y centrados en las personas."
+    jobTitle: "Desarrollo soluciones backend fiables.",
+    passion: "Código limpio y eficiente",
+    currentlyLearning: "Desarrollo asistido por IA",
+    description: "Soy un desarrollador backend con amplia experiencia en PHP y tecnologías modernas. Disfruto escribiendo código limpio, testeable y eficiente, mientras aprendo enfoques avanzados como DDD y CQRS."
   },
   about: {
     title: "Sobre Mí",
-    intro: "¡Hola! Soy John, un apasionado ingeniero de software con más de 5 años de experiencia construyendo aplicaciones web. Disfruto creando cosas que viven en internet, ya sean sitios web, aplicaciones o cualquier cosa intermedia.",
-    journey: "Mi viaje en el desarrollo web comenzó en 2018 cuando decidí personalizar un tema de WordPress — ¡resulta que crear un tema personalizado me enseñó mucho sobre HTML y CSS! Avanzando hasta hoy, he tenido el privilegio de trabajar en una agencia de publicidad, una startup y una gran corporación.",
-    current: "Mi enfoque principal estos días es crear productos y experiencias digitales accesibles e inclusivas en Company XYZ para una variedad de clientes.",
+    intro: "Soy un desarrollador backend con amplia experiencia en PHP y otras tecnologías modernas. Disfruto escribiendo código limpio, testeable y eficiente, mientras aprendo enfoques avanzados como DDD (Domain-Driven Design) o CQRS (Command Query Responsibility Segregation).",
+    journey: "Me apasiona todo lo relacionado con DevOps, incluyendo la integración de herramientas como Kubernetes y la automatización de procesos para mejorar la infraestructura y el despliegue. Además, me defiendo en el desarrollo frontend, lo que me permite aportar soluciones completas de extremo a extremo.",
+    current: "Recientemente, he incrementado mi productividad gracias al uso de herramientas de Inteligencia Artificial como GitHub Copilot, Cursor o Lovable, que me ayudan a escribir código más rápido y de mayor calidad.",
     technologies: "Estas son algunas tecnologías con las que he estado trabajando recientemente:",
     frontend: "Frontend",
-    frontendDesc: "Creando interfaces intuitivas con React, diseños responsivos con Tailwind y código seguro con TypeScript.",
+    frontendDesc: "Experiencia con herramientas y frameworks frontend para complementar el desarrollo backend y ofrecer soluciones completas.",
     backend: "Backend",
-    backendDesc: "Construyendo APIs robustas con Node.js, Express y varias bases de datos como MongoDB y PostgreSQL.",
+    backendDesc: "Construcción de aplicaciones robustas con PHP, Symfony, Laravel, Node.js y TypeScript, centrándose en la mantenibilidad y el rendimiento.",
     devops: "DevOps",
-    devopsDesc: "Automatizando pipelines de despliegue con CI/CD, containerización con Docker e infraestructura cloud con AWS.",
-    performance: "Rendimiento Web",
-    performanceDesc: "Optimizando aplicaciones para velocidad y escalabilidad con enfoque en experiencia de usuario y accesibilidad."
+    devopsDesc: "Automatización de despliegues con pipelines CI/CD, orquestación de contenedores con Kubernetes y gestión de infraestructura cloud con AWS.",
+    databases: "Bases de Datos",
+    databasesDesc: "Trabajo con diversas tecnologías de bases de datos desde MySQL hasta Redis, Elasticsearch y MongoDB para diferentes casos de uso.",
+    architecture: "Arquitectura",
+    architectureDesc: "Implementación de patrones avanzados de arquitectura de software como Domain-Driven Design (DDD), CQRS y diseño basado en eventos."
   },
   projects: {
     title: "Proyectos",

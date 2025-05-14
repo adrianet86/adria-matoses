@@ -12,25 +12,27 @@ export const ca = {
   },
   hero: {
     greeting: "Hola, em dic",
-    jobTitle: "Creo solucions per a la web.",
-    passion: "Construint experiències d'usuari boniques",
-    currentlyLearning: "Arquitectura Cloud",
-    description: "Sóc un enginyer de software especialitzat en crear experiències digitals excepcionals. Actualment, estic centrat en desenvolupar productes accessibles i centrats en les persones."
+    jobTitle: "Desenvolupo solucions backend fiables.",
+    passion: "Codi net i eficient",
+    currentlyLearning: "Desenvolupament assistit per IA",
+    description: "Sóc un desenvolupador backend amb àmplia experiència en PHP i tecnologies modernes. Gaudeixo escrivint codi net, testejable i eficient, mentre aprenc enfocaments avançats com DDD i CQRS."
   },
   about: {
     title: "Sobre Mi",
-    intro: "Hola! Sóc en John, un apassionat enginyer de software amb més de 5 anys d'experiència construint aplicacions web. Gaudeixo creant coses que viuen a internet, ja siguin llocs web, aplicacions o qualsevol cosa entremig.",
-    journey: "El meu viatge en el desenvolupament web va començar el 2018 quan vaig decidir personalitzar un tema de WordPress — resulta que crear un tema personalitzat em va ensenyar molt sobre HTML i CSS! Avançant fins avui, he tingut el privilegi de treballar en una agència de publicitat, una startup i una gran corporació.",
-    current: "El meu enfocament principal aquests dies és crear productes i experiències digitals accessibles i inclusives a Company XYZ per a una varietat de clients.",
+    intro: "Sóc un desenvolupador backend amb àmplia experiència en PHP i altres tecnologies modernes. Gaudeixo escrivint codi net, testejable i eficient, mentre aprenc enfocaments avançats com DDD (Domain-Driven Design) o CQRS (Command Query Responsibility Segregation).",
+    journey: "Em apassiona tot el relacionat amb DevOps, incloent la integració d'eines com Kubernetes i l'automatització de processos per millorar la infraestructura i el desplegament. A més, em defenso en el desenvolupament frontend, el que em permet aportar solucions completes d'extrem a extrem.",
+    current: "Recentment, he incrementat la meva productivitat gràcies a l'ús d'eines d'Intel·ligència Artificial com GitHub Copilot, Cursor o Lovable, que m'ajuden a escriure codi més ràpid i de major qualitat.",
     technologies: "Aquestes són algunes tecnologies amb les quals he estat treballant recentment:",
     frontend: "Frontend",
-    frontendDesc: "Creant interfícies intuïtives amb React, dissenys responsives amb Tailwind i codi segur amb TypeScript.",
+    frontendDesc: "Experiència amb eines i frameworks frontend per complementar el desenvolupament backend i oferir solucions completes.",
     backend: "Backend",
-    backendDesc: "Construint APIs robustes amb Node.js, Express i diverses bases de dades com MongoDB i PostgreSQL.",
+    backendDesc: "Construcció d'aplicacions robustes amb PHP, Symfony, Laravel, Node.js i TypeScript, centrant-se en la mantenibilitat i el rendiment.",
     devops: "DevOps",
-    devopsDesc: "Automatitzant pipelines de desplegament amb CI/CD, containerització amb Docker i infraestructura cloud amb AWS.",
-    performance: "Rendiment Web",
-    performanceDesc: "Optimitzant aplicacions per a velocitat i escalabilitat amb enfocament en experiència d'usuari i accessibilitat."
+    devopsDesc: "Automatització de desplegaments amb pipelines CI/CD, orquestració de contenidors amb Kubernetes i gestió d'infraestructura cloud amb AWS.",
+    databases: "Bases de Dades",
+    databasesDesc: "Treball amb diverses tecnologies de bases de dades des de MySQL fins a Redis, Elasticsearch i MongoDB per a diferents casos d'ús.",
+    architecture: "Arquitectura",
+    architectureDesc: "Implementació de patrons avançats d'arquitectura de software com Domain-Driven Design (DDD), CQRS i disseny basat en esdeveniments."
   },
   projects: {
     title: "Projectes",

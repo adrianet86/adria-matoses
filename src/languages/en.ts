@@ -12,25 +12,27 @@ export const en = {
   },
   hero: {
     greeting: "Hello, my name is",
-    jobTitle: "I build things for the web.",
-    passion: "Building beautiful user experiences",
-    currentlyLearning: "Cloud Architecture",
-    description: "I'm a software engineer specializing in building exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products."
+    jobTitle: "I build reliable backend solutions.",
+    passion: "Clean and efficient code",
+    currentlyLearning: "AI-assisted development",
+    description: "I'm a backend developer with extensive experience in PHP and modern technologies. I enjoy writing clean, testable, and efficient code while learning advanced approaches like DDD and CQRS."
   },
   about: {
     title: "About Me",
-    intro: "Hello! I'm John, a passionate software engineer with over 5 years of experience building web applications. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.",
-    journey: "My journey in web development started back in 2018 when I decided to try customizing a WordPress theme — turns out hacking together a custom theme taught me a lot about HTML & CSS! Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, and a large corporation.",
-    current: "My main focus these days is building accessible, inclusive products and digital experiences at Company XYZ for a variety of clients.",
-    technologies: "Here are a few technologies I've been working with recently:",
+    intro: "I'm a backend developer with extensive experience in PHP and modern technologies. I enjoy writing clean, testable, and efficient code while learning advanced approaches like DDD and CQRS.",
+    journey: "I'm passionate about everything related to DevOps, including the integration of tools like Kubernetes and process automation to improve infrastructure and deployment. Additionally, I can handle frontend development, which allows me to provide complete end-to-end solutions.",
+    current: "Recently, I've increased my productivity thanks to the use of Artificial Intelligence tools like GitHub Copilot, Cursor, and Lovable, which help me write code faster and with higher quality.",
+    technologies: "These are some technologies I've been working with recently:",
     frontend: "Frontend",
-    frontendDesc: "Creating intuitive UIs with React, responsive designs with Tailwind, and type-safe code with TypeScript.",
+    frontendDesc: "Experience with frontend tools and frameworks to complement backend development for complete solutions.",
     backend: "Backend",
-    backendDesc: "Building robust APIs with Node.js, Express, and various databases like MongoDB and PostgreSQL.",
+    backendDesc: "Building robust applications with PHP, Symfony, Laravel, Node.js and TypeScript, focusing on maintainability and performance.",
     devops: "DevOps",
-    devopsDesc: "Automating deployment pipelines with CI/CD, containerization with Docker, and cloud infrastructure with AWS.",
-    performance: "Web Performance",
-    performanceDesc: "Optimizing applications for speed and scalability with a focus on user experience and accessibility."
+    devopsDesc: "Deployment automation with CI/CD pipelines, container orchestration with Kubernetes, and cloud infrastructure management with AWS.",
+    databases: "Databases",
+    databasesDesc: "Working with various database technologies from MySQL to Redis, Elasticsearch, and MongoDB for different use cases.",
+    architecture: "Architecture",
+    architectureDesc: "Implementing advanced software architecture patterns like Domain-Driven Design (DDD), CQRS, and event-driven design."
   },
   projects: {
     title: "Projects",
