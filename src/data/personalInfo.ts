@@ -11,6 +11,7 @@ interface PersonalInfo {
     [key in Language]: string;
   };
   github: string;
+  gitlab: string;
   linkedin: string;
   skills: string[];
   experiences: {
@@ -39,6 +40,7 @@ export const personalInfo: PersonalInfo = {
     ca: "Barcelona, Catalunya, Espanya"
   },
   github: "github.com/adrianet86",
+  gitlab: "gitlab.com/adrianet86",
   linkedin: "linkedin.com/in/adriàmatoses-73b47146",
   skills: [
     "PHP", "TypeScript", "Node.js", "Symfony", 

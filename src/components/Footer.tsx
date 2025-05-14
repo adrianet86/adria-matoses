@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Gitlab, Linkedin, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { personalInfo } from "@/data/personalInfo";
 
@@ -19,7 +19,7 @@ const Footer = () => {
           
           <div className="flex space-x-4">
             <a 
-              href="https://github.com" 
+              href={`https://${personalInfo.github}`}
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-teal transition-colors"
@@ -28,7 +28,16 @@ const Footer = () => {
               <Github className="h-5 w-5" />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href={`https://${personalInfo.gitlab}`}
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-teal transition-colors"
+              aria-label="GitLab"
+            >
+              <Gitlab className="h-5 w-5" />
+            </a>
+            <a 
+              href={`https://${personalInfo.linkedin}`}
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-teal transition-colors"

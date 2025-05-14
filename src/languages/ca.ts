@@ -1,4 +1,3 @@
-
 export const ca = {
   general: {
     languageName: "Català"
@@ -64,6 +63,7 @@ export const ca = {
     emailLabel: "Correu",
     linkedinLabel: "LinkedIn",
     githubLabel: "GitHub",
+    gitlabLabel: "GitLab",
     social: "O connecta amb mi a les xarxes socials:",
     formName: "El Teu Nom",
     formEmail: "El Teu Correu",

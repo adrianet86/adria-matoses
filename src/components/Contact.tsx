@@ -3,11 +3,14 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { Github, Gitlab, Linkedin, Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { personalInfo } from "@/data/personalInfo";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,8 +30,8 @@ const Contact = () => {
     // Simulate form submission
     setTimeout(() => {
       toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
+        title: t.contact.messageSent,
+        description: t.contact.messageSentDesc,
       });
       setFormData({ name: "", email: "", message: "" });
       setIsSubmitting(false);
@@ -38,14 +41,13 @@ const Contact = () => {
   return (
     <section id="contact" className="bg-navy-light">
       <div className="section-container">
-        <h2 className="section-title">Get In Touch</h2>
+        <h2 className="section-title">{t.contact.title}</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
           <div>
-            <h3 className="text-xl font-semibold mb-4">Let's Chat</h3>
+            <h3 className="text-xl font-semibold mb-4">{t.contact.subtitle}</h3>
             <p className="text-muted-foreground mb-6">
-              Whether you have a project in mind, a question about my work, or just want to connect,
-              I'd love to hear from you. My inbox is always open!
+              {t.contact.description}
             </p>
             
             <div className="space-y-6">
@@ -54,9 +56,9 @@ const Contact = () => {
                   <Mail className="h-5 w-5 text-teal" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
-                  <a href="mailto:hello@johndeveloper.com" className="text-white hover:text-teal transition-colors">
-                    hello@johndeveloper.com
+                  <p className="text-sm text-muted-foreground">{t.contact.emailLabel}</p>
+                  <a href={`mailto:${personalInfo.email}`} className="text-white hover:text-teal transition-colors">
+                    {personalInfo.email}
                   </a>
                 </div>
               </div>
@@ -66,9 +68,9 @@ const Contact = () => {
                   <Linkedin className="h-5 w-5 text-teal" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">LinkedIn</p>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-teal transition-colors">
-                    linkedin.com/in/johndeveloper
+                  <p className="text-sm text-muted-foreground">{t.contact.linkedinLabel}</p>
+                  <a href={`https://${personalInfo.linkedin}`} target="_blank" rel="noopener noreferrer" className="text-white hover:text-teal transition-colors">
+                    {personalInfo.linkedin}
                   </a>
                 </div>
               </div>
@@ -78,29 +80,46 @@ const Contact = () => {
                   <Github className="h-5 w-5 text-teal" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">GitHub</p>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-teal transition-colors">
-                    github.com/johndeveloper
+                  <p className="text-sm text-muted-foreground">{t.contact.githubLabel}</p>
+                  <a href={`https://${personalInfo.github}`} target="_blank" rel="noopener noreferrer" className="text-white hover:text-teal transition-colors">
+                    {personalInfo.github}
+                  </a>
+                </div>
+              </div>
+              
+              <div className="flex items-center">
+                <div className="bg-teal/10 p-3 rounded-full mr-4">
+                  <Gitlab className="h-5 w-5 text-teal" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">{t.contact.gitlabLabel}</p>
+                  <a href={`https://${personalInfo.gitlab}`} target="_blank" rel="noopener noreferrer" className="text-white hover:text-teal transition-colors">
+                    {personalInfo.gitlab}
                   </a>
                 </div>
               </div>
             </div>
             
             <div className="mt-8">
-              <p className="text-muted-foreground mb-4">Or connect with me on social media:</p>
+              <p className="text-muted-foreground mb-4">{t.contact.social}</p>
               <div className="flex space-x-4">
                 <Button size="icon" variant="outline" asChild>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <a href={`https://${personalInfo.github}`} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <Github className="h-5 w-5" />
                   </a>
                 </Button>
                 <Button size="icon" variant="outline" asChild>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <a href={`https://${personalInfo.gitlab}`} target="_blank" rel="noopener noreferrer" aria-label="GitLab">
+                    <Gitlab className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button size="icon" variant="outline" asChild>
+                  <a href={`https://${personalInfo.linkedin}`} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <Linkedin className="h-5 w-5" />
                   </a>
                 </Button>
                 <Button size="icon" variant="outline" asChild>
-                  <a href="mailto:hello@johndeveloper.com" aria-label="Email">
+                  <a href={`mailto:${personalInfo.email}`} aria-label="Email">
                     <Mail className="h-5 w-5" />
                   </a>
                 </Button>
@@ -112,7 +131,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="bg-navy p-8 rounded-xl border border-muted shadow-lg">
               <div className="mb-6">
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Your Name
+                  {t.contact.formName}
                 </label>
                 <Input
                   id="name"
@@ -127,7 +146,7 @@ const Contact = () => {
               
               <div className="mb-6">
                 <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Your Email
+                  {t.contact.formEmail}
                 </label>
                 <Input
                   id="email"
@@ -143,12 +162,12 @@ const Contact = () => {
               
               <div className="mb-6">
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Your Message
+                  {t.contact.formMessage}
                 </label>
                 <Textarea
                   id="message"
                   name="message"
-                  placeholder="I'd like to discuss a project..."
+                  placeholder={t.contact.formMessagePlaceholder}
                   value={formData.message}
                   onChange={handleChange}
                   required
@@ -161,7 +180,7 @@ const Contact = () => {
                 className="w-full"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? t.contact.sending : t.contact.sendMessage}
               </Button>
             </form>
           </div>

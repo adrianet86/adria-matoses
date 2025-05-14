@@ -64,6 +64,7 @@ export const en = {
     emailLabel: "Email",
     linkedinLabel: "LinkedIn",
     githubLabel: "GitHub",
+    gitlabLabel: "GitLab",
     social: "Or connect with me on social media:",
     formName: "Your Name",
     formEmail: "Your Email",
