@@ -32,7 +32,7 @@ const Hero = () => {
             <div className="code-block">
               <pre className="text-code-foreground">
                 <code>{`const developer = {
-  skills: ["React", "TypeScript", "Node.js"],
+  skills: ["PHP", "Symfony", "TypeScript", "DevOps"],
   passion: "${t.hero.passion}",
   currentlyLearning: "${t.hero.currentlyLearning}"
 };`}</code>

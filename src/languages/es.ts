@@ -1,4 +1,3 @@
-
 export const es = {
   general: {
     languageName: "Español"
@@ -6,6 +5,8 @@ export const es = {
   header: {
     home: "Inicio",
     about: "Sobre Mí",
+    experience: "Experiencia",
+    education: "Educación",
     projects: "Side Projects",
     contact: "Contacto",
     contactMe: "Contáctame"
@@ -26,7 +27,7 @@ export const es = {
     frontend: "Frontend",
     frontendDesc: "Experiencia con herramientas y frameworks frontend para complementar el desarrollo backend y ofrecer soluciones completas.",
     backend: "Backend",
-    backendDesc: "Construcción de aplicaciones robustas con PHP, Symfony, Laravel, Node.js y TypeScript, centrándose en la mantenibilidad y el rendimiento.",
+    backendDesc: "Construcción de aplicaciones robustas con PHP, Symfony, Golang y TypeScript, centrándose en la mantenibilidad y el rendimiento.",
     devops: "DevOps",
     devopsDesc: "Automatización de despliegues con pipelines CI/CD, orquestación de contenedores con Kubernetes y gestión de infraestructura cloud con AWS.",
     databases: "Bases de Datos",
@@ -71,6 +72,6 @@ export const es = {
   },
   footer: {
     rights: "Todos los derechos reservados.",
-    builtWith: "Diseñado y construido con"
+    builtWith: "Creado enteramente por IA, 100% sin código – solo prompts"
   }
 };

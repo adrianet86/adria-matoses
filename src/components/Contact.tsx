@@ -53,18 +53,6 @@ const Contact = () => {
             <div className="space-y-6">
               <div className="flex items-center">
                 <div className="bg-teal/10 p-3 rounded-full mr-4">
-                  <Mail className="h-5 w-5 text-teal" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">{t.contact.emailLabel}</p>
-                  <a href={`mailto:${personalInfo.email}`} className="text-white hover:text-teal transition-colors">
-                    {personalInfo.email}
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-center">
-                <div className="bg-teal/10 p-3 rounded-full mr-4">
                   <Linkedin className="h-5 w-5 text-teal" />
                 </div>
                 <div>
@@ -97,32 +85,6 @@ const Contact = () => {
                     {personalInfo.gitlab}
                   </a>
                 </div>
-              </div>
-            </div>
-            
-            <div className="mt-8">
-              <p className="text-muted-foreground mb-4">{t.contact.social}</p>
-              <div className="flex space-x-4">
-                <Button size="icon" variant="outline" asChild>
-                  <a href={`https://${personalInfo.github}`} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <Github className="h-5 w-5" />
-                  </a>
-                </Button>
-                <Button size="icon" variant="outline" asChild>
-                  <a href={`https://${personalInfo.gitlab}`} target="_blank" rel="noopener noreferrer" aria-label="GitLab">
-                    <Gitlab className="h-5 w-5" />
-                  </a>
-                </Button>
-                <Button size="icon" variant="outline" asChild>
-                  <a href={`https://${personalInfo.linkedin}`} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                </Button>
-                <Button size="icon" variant="outline" asChild>
-                  <a href={`mailto:${personalInfo.email}`} aria-label="Email">
-                    <Mail className="h-5 w-5" />
-                  </a>
-                </Button>
               </div>
             </div>
           </div>

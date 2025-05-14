@@ -45,19 +45,12 @@ const Footer = () => {
             >
               <Linkedin className="h-5 w-5" />
             </a>
-            <a 
-              href={`mailto:${personalInfo.email}`}
-              className="text-muted-foreground hover:text-teal transition-colors"
-              aria-label="Email"
-            >
-              <Mail className="h-5 w-5" />
-            </a>
           </div>
         </div>
         
         <div className="mt-6 text-center">
           <p className="text-xs text-muted-foreground">
-            {t.footer.builtWith} <span className="text-red-400">❤️</span> by {personalInfo.name}
+            {t.footer.builtWith} <span className="text-red-400">🤖✨</span> by {personalInfo.name}
           </p>
         </div>
       </div>

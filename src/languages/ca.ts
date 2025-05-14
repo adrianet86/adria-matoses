@@ -1,4 +1,3 @@
-
 export const ca = {
   general: {
     languageName: "Català"
@@ -6,6 +5,8 @@ export const ca = {
   header: {
     home: "Inici",
     about: "Sobre Mi",
+    experience: "Experiència",
+    education: "Educació",
     projects: "Side Projects",
     contact: "Contacte",
     contactMe: "Contacta'm"
@@ -26,7 +27,7 @@ export const ca = {
     frontend: "Frontend",
     frontendDesc: "Experiència amb eines i frameworks frontend per complementar el desenvolupament backend i oferir solucions completes.",
     backend: "Backend",
-    backendDesc: "Construcció d'aplicacions robustes amb PHP, Symfony, Laravel, Node.js i TypeScript, centrant-se en la mantenibilitat i el rendiment.",
+    backendDesc: "Construcció d'aplicacions robustes amb PHP, Symfony, Golang i TypeScript, centrant-se en la mantenibilitat i el rendiment.",
     devops: "DevOps",
     devopsDesc: "Automatització de desplegaments amb pipelines CI/CD, orquestració de contenidors amb Kubernetes i gestió d'infraestructura cloud amb AWS.",
     databases: "Bases de Dades",
@@ -71,6 +72,6 @@ export const ca = {
   },
   footer: {
     rights: "Tots els drets reservats.",
-    builtWith: "Dissenyat i construït amb"
+    builtWith: "Creat íntegrament per IA, 100% sense codi – només prompts"
   }
 };

@@ -1,9 +1,9 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Github, Mail, Menu, X } from "lucide-react";
+import { Mail, Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { personalInfo } from "@/data/personalInfo";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,28 +38,24 @@ const Header = () => {
       <div className="max-w-screen-xl mx-auto px-4 sm:px-8 flex justify-between items-center">
         {/* Logo */}
         <div className="text-xl font-bold">
-          <a href="#home" className="gradient-text">Dev.Name</a>
+          <a href="#home" className="gradient-text">{personalInfo.name}</a>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
           <button onClick={() => scrollToSection("home")} className="nav-link">{t.header.home}</button>
           <button onClick={() => scrollToSection("about")} className="nav-link">{t.header.about}</button>
+          <button onClick={() => scrollToSection("experience")} className="nav-link">{t.header.experience}</button>
+          <button onClick={() => scrollToSection("education")} className="nav-link">{t.header.education}</button>
           <button onClick={() => scrollToSection("projects")} className="nav-link">{t.header.projects}</button>
-          <button onClick={() => scrollToSection("contact")} className="nav-link">{t.header.contact}</button>
-          <div className="ml-4 flex items-center space-x-4">
+          <a href="#contact">
+            <Button className="gap-2 ml-4">
+              <Mail className="h-4 w-4" />
+              {t.header.contactMe}
+            </Button>
+          </a>
+          <div className="ml-4">
             <LanguageSwitcher />
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-              <Button size="icon" variant="ghost">
-                <Github className="h-5 w-5" />
-              </Button>
-            </a>
-            <a href="#contact">
-              <Button className="gap-2">
-                <Mail className="h-4 w-4" />
-                {t.header.contactMe}
-              </Button>
-            </a>
           </div>
         </nav>
 
@@ -82,14 +78,10 @@ const Header = () => {
           <div className="flex flex-col p-4 space-y-4">
             <button onClick={() => scrollToSection("home")} className="nav-link text-left py-3">{t.header.home}</button>
             <button onClick={() => scrollToSection("about")} className="nav-link text-left py-3">{t.header.about}</button>
+            <button onClick={() => scrollToSection("experience")} className="nav-link text-left py-3">{t.header.experience}</button>
+            <button onClick={() => scrollToSection("education")} className="nav-link text-left py-3">{t.header.education}</button>
             <button onClick={() => scrollToSection("projects")} className="nav-link text-left py-3">{t.header.projects}</button>
-            <button onClick={() => scrollToSection("contact")} className="nav-link text-left py-3">{t.header.contact}</button>
-            <div className="flex items-center pt-2 space-x-4">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-                <Button size="icon" variant="ghost">
-                  <Github className="h-5 w-5" />
-                </Button>
-              </a>
+            <div className="flex items-center pt-2">
               <Button className="gap-2" onClick={() => scrollToSection("contact")}>
                 <Mail className="h-4 w-4" />
                 {t.header.contactMe}

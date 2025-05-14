@@ -1,4 +1,3 @@
-
 import { Language } from '../languages';
 
 interface PersonalInfo {
@@ -20,6 +19,8 @@ interface PersonalInfo {
       [key in Language]: string;
     };
     period: string;
+    technologies: string[];
+    categories: string[];
     description: {
       [key in Language]: string[];
     };
@@ -51,8 +52,8 @@ export const personalInfo: PersonalInfo = {
   gitlab: "gitlab.com/adrianet86",
   linkedin: "linkedin.com/in/adriàmatoses-73b47146",
   skills: [
-    "PHP", "TypeScript", "Node.js", "Symfony", 
-    "Laravel", "Kubernetes", "AWS", "MySQL", 
+    "PHP", "TypeScript", "Symfony", "Golang", 
+    "Kubernetes", "AWS", "MySQL", "Laravel",
     "Redis", "Elasticsearch", "MongoDB", "DDD", 
     "CQRS", "TDD", "CI/CD", "DevOps"
   ],
@@ -65,6 +66,8 @@ export const personalInfo: PersonalInfo = {
         ca: "Enginyer de Software Sènior"
       },
       period: "April 2022 - Present",
+      technologies: ["PHP", "TypeScript", "Kubernetes", "AWS", "CQRS"],
+      categories: ["Backend", "DevOps"],
       description: {
         en: [
           "Development and maintenance of scalable backend services for one of Europe's leading e-commerce platforms.",
@@ -89,11 +92,13 @@ export const personalInfo: PersonalInfo = {
     {
       company: "PromoFarma.com",
       position: {
-        en: "Backend Engineer",
-        es: "Ingeniero Backend",
-        ca: "Enginyer Backend"
+        en: "Senior Software Engineer",
+        es: "Ingeniero de Software Senior",
+        ca: "Enginyer de Software Sènior"
       },
       period: "November 2020 - April 2022",
+      technologies: ["Node.js", "PHP", "TypeScript", "Kubernetes", "GraphQL", "Golang"],
+      categories: ["Backend", "DevOps"],
       description: {
         en: [
           "Designed and implemented backend services with Node.js, PHP, and TypeScript.",
@@ -120,6 +125,8 @@ export const personalInfo: PersonalInfo = {
         ca: "Desenvolupador PHP"
       },
       period: "July 2019 - October 2020",
+      technologies: ["PHP", "Symfony", "AWS", "Kubernetes", "DDD"],
+      categories: ["Backend", "DevOps"],
       description: {
         en: [
           "Development of microservices in Symfony and deployment on AWS with Kubernetes.",
@@ -146,6 +153,8 @@ export const personalInfo: PersonalInfo = {
         ca: "Desenvolupador Backend PHP i DevOps"
       },
       period: "May 2018 - June 2019",
+      technologies: ["PHP", "Symfony", "Kubernetes", "AWS", "CQRS", "CI/CD"],
+      categories: ["Backend", "DevOps"],
       description: {
         en: [
           "Creation of backend services with Symfony and adoption of CQRS to improve separation of responsibilities.",
@@ -172,6 +181,8 @@ export const personalInfo: PersonalInfo = {
         ca: "Desenvolupador PHP"
       },
       period: "September 2016 - May 2018",
+      technologies: ["PHP", "Laravel", "MySQL", "Redis", "Elasticsearch", "TDD"],
+      categories: ["Backend"],
       description: {
         en: [
           "Development of RESTful APIs using Laravel and TDD to ensure code quality.",
@@ -184,7 +195,7 @@ export const personalInfo: PersonalInfo = {
           "Implementación de herramientas avanzadas como Xdebug para depuración y análisis de rendimiento."
         ],
         ca: [
-          "Desenvolupament d'APIs RESTful utilitzant Laravel i TDD per garantir la qualitat del codi.",
+          "Desenvolupament d'APIs RESTful utilizando Laravel i TDD per garantir la qualitat del codi.",
           "Optimització de bases de dades amb MySQL, Redis i Elasticsearch.",
           "Implementació d'eines avançades com Xdebug per a depuració i anàlisi de rendiment."
         ]
@@ -198,6 +209,8 @@ export const personalInfo: PersonalInfo = {
         ca: "Software Developer"
       },
       period: "September 2013 - September 2016",
+      technologies: ["PHP", "Yii", "MySQL", "Android"],
+      categories: ["Backend", "Frontend"],
       description: {
         en: [
           "Development of web applications with PHP (Yii Framework) and MySQL database design.",
@@ -224,6 +237,8 @@ export const personalInfo: PersonalInfo = {
         ca: "Suport Tècnic i Desenvolupador"
       },
       period: "March 2012 - September 2016",
+      technologies: ["PHP", "Yii", "MySQL"],
+      categories: ["Backend"],
       description: {
         en: [
           "Implementation and technical support of Passportscan software.",
