@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { projects } from "@/data/projectsData";
 
@@ -10,12 +10,11 @@ interface ProjectProps {
   description: string;
   tags: string[];
   image: string;
-  githubUrl: string;
   demoUrl: string;
   reverse?: boolean;
 }
 
-const Project = ({ title, description, tags, image, githubUrl, demoUrl, reverse }: ProjectProps) => {
+const Project = ({ title, description, tags, image, demoUrl, reverse }: ProjectProps) => {
   const { t } = useLanguage();
   
   return (
@@ -49,12 +48,6 @@ const Project = ({ title, description, tags, image, githubUrl, demoUrl, reverse 
         </div>
         
         <div className={`flex gap-3 ${reverse ? 'lg:justify-end' : ''}`}>
-          <Button variant="outline" size="sm" asChild>
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-              <Github className="h-4 w-4" />
-              {t.projects.code}
-            </a>
-          </Button>
           <Button variant="default" size="sm" asChild>
             <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
               <ExternalLink className="h-4 w-4" />
@@ -79,28 +72,17 @@ const Projects = () => {
         </p>
         
         <div className="space-y-24">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <Project 
               key={project.id}
               title={project.title[language]}
               description={project.description[language]}
               tags={project.tags}
               image={project.image}
-              githubUrl={project.githubUrl}
               demoUrl={project.demoUrl}
-              reverse={project.reverse}
+              reverse={index % 2 !== 0}
             />
           ))}
-        </div>
-        
-        <div className="mt-20 text-center">
-          <p className="text-muted-foreground mb-6">{t.projects.viewMore}</p>
-          <Button asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-              <Github className="h-4 w-4" />
-              {t.projects.viewAll}
-            </a>
-          </Button>
         </div>
       </div>
     </section>

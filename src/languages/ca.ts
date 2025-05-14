@@ -5,7 +5,7 @@ export const ca = {
   header: {
     home: "Inici",
     about: "Sobre Mi",
-    projects: "Projectes",
+    projects: "Side Projects",
     contact: "Contacte",
     contactMe: "Contacta'm"
   },
@@ -34,27 +34,12 @@ export const ca = {
     architectureDesc: "Implementació de patrons avançats d'arquitectura de software com Domain-Driven Design (DDD), CQRS i disseny basat en esdeveniments."
   },
   projects: {
-    title: "Projectes",
+    title: "Side Projects",
     description: "Dona un cop d'ull a alguns dels meus treballs recents. Cada projecte va presentar desafiaments únics i oportunitats per aprendre noves tecnologies.",
     viewMore: "Interessat en veure més dels meus treballs?",
     viewAll: "Veure Tots els Projectes",
     liveDemo: "Demo en Viu",
-    code: "Codi",
-    project1: {
-      title: "Plataforma E-commerce",
-      description: "Una plataforma de comerç electrònic completa amb autenticació d'usuaris, catàleg de productes, carret de compres, processament de pagaments i gestió de comandes.",
-      tags: ["React", "Node.js", "MongoDB", "Stripe", "Redux"]
-    },
-    project2: {
-      title: "Sistema de Gestió de Tasques",
-      description: "Una eina col·laborativa de gestió de projectes amb taulers de tasques arrossegables, actualitzacions en temps real, rols d'usuari i anàlisis detallades.",
-      tags: ["TypeScript", "Next.js", "PostgreSQL", "Tailwind", "Socket.io"]
-    },
-    project3: {
-      title: "Dashboard Financer",
-      description: "Dashboard interactiu de visualització de dades financeres amb dades de mercat en temps real, widgets personalitzables i anàlisi predictiu.",
-      tags: ["React", "D3.js", "Express", "GraphQL", "AWS"]
-    }
+    code: "Codi"
   },
   contact: {
     title: "Contacta'm",

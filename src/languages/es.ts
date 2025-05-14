@@ -1,4 +1,3 @@
-
 export const es = {
   general: {
     languageName: "Español"
@@ -6,7 +5,7 @@ export const es = {
   header: {
     home: "Inicio",
     about: "Sobre Mí",
-    projects: "Proyectos",
+    projects: "Side Projects",
     contact: "Contacto",
     contactMe: "Contáctame"
   },
@@ -35,27 +34,12 @@ export const es = {
     architectureDesc: "Implementación de patrones avanzados de arquitectura de software como Domain-Driven Design (DDD), CQRS y diseño basado en eventos."
   },
   projects: {
-    title: "Proyectos",
+    title: "Side Projects",
     description: "Echa un vistazo a algunos de mis trabajos recientes. Cada proyecto presentó desafíos únicos y oportunidades para aprender nuevas tecnologías.",
     viewMore: "¿Interesado en ver más de mi trabajo?",
     viewAll: "Ver Todos los Proyectos",
     liveDemo: "Demo en Vivo",
-    code: "Código",
-    project1: {
-      title: "Plataforma E-commerce",
-      description: "Una plataforma de comercio electrónico completa con autenticación de usuarios, catálogo de productos, carrito de compras, procesamiento de pagos y gestión de pedidos.",
-      tags: ["React", "Node.js", "MongoDB", "Stripe", "Redux"]
-    },
-    project2: {
-      title: "Sistema de Gestión de Tareas",
-      description: "Una herramienta colaborativa de gestión de proyectos con tableros de tareas arrastrables, actualizaciones en tiempo real, roles de usuario y análisis detallados.",
-      tags: ["TypeScript", "Next.js", "PostgreSQL", "Tailwind", "Socket.io"]
-    },
-    project3: {
-      title: "Dashboard Financiero",
-      description: "Dashboard interactivo de visualización de datos financieros con datos de mercado en tiempo real, widgets personalizables y análisis predictivo.",
-      tags: ["React", "D3.js", "Express", "GraphQL", "AWS"]
-    }
+    code: "Código"
   },
   contact: {
     title: "Ponte en Contacto",

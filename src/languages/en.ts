@@ -1,4 +1,3 @@
-
 export const en = {
   general: {
     languageName: "English"
@@ -6,7 +5,7 @@ export const en = {
   header: {
     home: "Home",
     about: "About",
-    projects: "Projects",
+    projects: "Side Projects",
     contact: "Contact",
     contactMe: "Contact Me"
   },
@@ -35,27 +34,12 @@ export const en = {
     architectureDesc: "Implementing advanced software architecture patterns like Domain-Driven Design (DDD), CQRS, and event-driven design."
   },
   projects: {
-    title: "Projects",
+    title: "Side Projects",
     description: "Check out some of my recent work. Each project presented unique challenges and opportunities to learn new technologies.",
     viewMore: "Interested in seeing more of my work?",
     viewAll: "View All Projects",
     liveDemo: "Live Demo",
-    code: "Code",
-    project1: {
-      title: "E-commerce Platform",
-      description: "A full-featured e-commerce platform with user authentication, product catalog, shopping cart, payment processing, and order management.",
-      tags: ["React", "Node.js", "MongoDB", "Stripe", "Redux"]
-    },
-    project2: {
-      title: "Task Management System",
-      description: "A collaborative project management tool featuring drag-and-drop task boards, real-time updates, user roles, and detailed analytics.",
-      tags: ["TypeScript", "Next.js", "PostgreSQL", "Tailwind", "Socket.io"]
-    },
-    project3: {
-      title: "Finance Dashboard",
-      description: "Interactive financial data visualization dashboard with real-time market data, customizable widgets, and predictive analytics.",
-      tags: ["React", "D3.js", "Express", "GraphQL", "AWS"]
-    }
+    code: "Code"
   },
   contact: {
     title: "Get In Touch",
