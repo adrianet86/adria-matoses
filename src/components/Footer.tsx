@@ -1,8 +1,11 @@
 
 import { Github, Linkedin, Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { personalInfo } from "@/data/personalInfo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
   
   return (
     <footer className="bg-navy-dark py-8">
@@ -10,7 +13,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="text-sm text-muted-foreground">
-              &copy; {currentYear} John Developer. All rights reserved.
+              &copy; {currentYear} {personalInfo.name}. {t.footer.rights}
             </p>
           </div>
           
@@ -34,7 +37,7 @@ const Footer = () => {
               <Linkedin className="h-5 w-5" />
             </a>
             <a 
-              href="mailto:hello@johndeveloper.com"
+              href={`mailto:${personalInfo.email}`}
               className="text-muted-foreground hover:text-teal transition-colors"
               aria-label="Email"
             >
@@ -45,7 +48,7 @@ const Footer = () => {
         
         <div className="mt-6 text-center">
           <p className="text-xs text-muted-foreground">
-            Designed and built with <span className="text-red-400">❤️</span> by John Developer
+            {t.footer.builtWith} <span className="text-red-400">❤️</span> by {personalInfo.name}
           </p>
         </div>
       </div>

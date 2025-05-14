@@ -1,8 +1,12 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowDownCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { personalInfo } from "@/data/personalInfo";
 
 const Hero = () => {
+  const { t, language } = useLanguage();
+
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
@@ -16,12 +20,12 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="space-y-6 animate-fade-in">
             <div className="space-y-2">
-              <p className="text-teal text-lg font-mono">Hello, my name is</p>
+              <p className="text-teal text-lg font-mono">{t.hero.greeting}</p>
               <h1 className="text-5xl sm:text-7xl font-bold text-white">
-                John Developer
+                {personalInfo.name}
               </h1>
               <h2 className="text-3xl sm:text-5xl font-bold text-muted-foreground">
-                I build things for the web.
+                {t.hero.jobTitle}
               </h2>
             </div>
 
@@ -29,24 +33,23 @@ const Hero = () => {
               <pre className="text-code-foreground">
                 <code>{`const developer = {
   skills: ["React", "TypeScript", "Node.js"],
-  passion: "Building beautiful user experiences",
-  currentlyLearning: "Cloud Architecture"
+  passion: "${t.hero.passion}",
+  currentlyLearning: "${t.hero.currentlyLearning}"
 };`}</code>
               </pre>
             </div>
 
             <p className="text-muted-foreground text-lg max-w-xl">
-              I'm a software engineer specializing in building exceptional digital experiences.
-              Currently, I'm focused on building accessible, human-centered products.
+              {t.hero.description}
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
               <Button size="lg" onClick={scrollToAbout}>
-                About Me
+                {t.header.about}
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <a href="#projects">
-                  View Projects
+                  {t.header.projects}
                 </a>
               </Button>
             </div>
@@ -71,9 +74,9 @@ const Hero = () => {
                   <div className="pl-4">
                     <div className="text-yellow-300">constructor() {"{"}</div>
                     <div className="pl-4">
-                      <div className="text-purple-400">this<span className="text-white">.</span>name <span className="text-white">=</span> <span className="text-green-300">"John Developer"</span>;</div>
-                      <div className="text-purple-400">this<span className="text-white">.</span>title <span className="text-white">=</span> <span className="text-green-300">"Full Stack Engineer"</span>;</div>
-                      <div className="text-purple-400">this<span className="text-white">.</span>location <span className="text-white">=</span> <span className="text-green-300">"San Francisco, CA"</span>;</div>
+                      <div className="text-purple-400">this<span className="text-white">.</span>name <span className="text-white">=</span> <span className="text-green-300">"{personalInfo.name}"</span>;</div>
+                      <div className="text-purple-400">this<span className="text-white">.</span>title <span className="text-white">=</span> <span className="text-green-300">"{personalInfo.title[language]}"</span>;</div>
+                      <div className="text-purple-400">this<span className="text-white">.</span>location <span className="text-white">=</span> <span className="text-green-300">"{personalInfo.location[language]}"</span>;</div>
                     </div>
                     <div className="text-yellow-300">{"}"}</div>
                   </div>
@@ -82,11 +85,9 @@ const Hero = () => {
                     <div className="pl-4">
                       <div className="text-purple-400">return <span className="text-white">[</span></div>
                       <div className="pl-4">
-                        <div className="text-green-300">"JavaScript"</div>
-                        <div className="text-green-300">"TypeScript"</div>
-                        <div className="text-green-300">"React"</div>
-                        <div className="text-green-300">"Node.js"</div>
-                        <div className="text-green-300">"AWS"</div>
+                        {personalInfo.skills.slice(0, 5).map((skill, i) => (
+                          <div key={i} className="text-green-300">"{skill}"</div>
+                        ))}
                       </div>
                       <div className="text-purple-400 pl-2"><span className="text-white">]</span>;</div>
                     </div>
