@@ -2,6 +2,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { personalInfo } from "@/data/personalInfo";
 import { Briefcase, Calendar } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const Experience = () => {
   const { t, language } = useLanguage();
@@ -29,6 +30,14 @@ const Experience = () => {
                   </div>
                   
                   <p className="text-teal mb-4">{job.position[language]}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {job.technologies?.map((tech, i) => (
+                      <Badge key={i} variant="secondary" className="bg-secondary/60">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                   
                   <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
                     {job.description[language].map((item, i) => (

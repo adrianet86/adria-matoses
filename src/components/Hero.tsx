@@ -30,7 +30,7 @@ const Hero = () => {
             </div>
 
             <div className="code-block">
-              <pre className="text-code-foreground">
+              <pre className="text-code-foreground dark:text-gray-200 text-gray-700">
                 <code>{`const developer = {
   skills: ["PHP", "Symfony", "TypeScript", "DevOps"],
   passion: "${t.hero.passion}",
