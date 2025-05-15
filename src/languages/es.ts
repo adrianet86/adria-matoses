@@ -49,7 +49,7 @@ export const es = {
     description: "Echa un vistazo a algunos de mis trabajos recientes. Cada proyecto presentó desafíos únicos y oportunidades para aprender nuevas tecnologías.",
     viewMore: "¿Interesado en ver más de mi trabajo?",
     viewAll: "Ver Todos los Proyectos",
-    liveDemo: "Demo en Vivo",
+    liveDemo: "Visitar sitio web",
     code: "Código"
   },
   contact: {

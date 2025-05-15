@@ -49,7 +49,7 @@ export const en = {
     description: "Check out some of my recent work. Each project presented unique challenges and opportunities to learn new technologies.",
     viewMore: "Interested in seeing more of my work?",
     viewAll: "View All Projects",
-    liveDemo: "Live Demo",
+    liveDemo: "Visit Website",
     code: "Code"
   },
   contact: {

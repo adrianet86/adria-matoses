@@ -49,7 +49,7 @@ export const ca = {
     description: "Dona un cop d'ull a alguns dels meus treballs recents. Cada projecte va presentar desafiaments únics i oportunitats per aprendre noves tecnologies.",
     viewMore: "Interessat en veure més dels meus treballs?",
     viewAll: "Veure Tots els Projectes",
-    liveDemo: "Demo en Viu",
+    liveDemo: "Visita el lloc web",
     code: "Codi"
   },
   contact: {

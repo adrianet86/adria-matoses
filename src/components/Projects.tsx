@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
@@ -12,9 +11,10 @@ interface ProjectProps {
   image: string;
   demoUrl: string;
   reverse?: boolean;
+  hideDemoLink?: boolean;
 }
 
-const Project = ({ title, description, tags, image, demoUrl, reverse }: ProjectProps) => {
+const Project = ({ title, description, tags, image, demoUrl, reverse, hideDemoLink }: ProjectProps) => {
   const { t } = useLanguage();
   
   return (
@@ -47,14 +47,16 @@ const Project = ({ title, description, tags, image, demoUrl, reverse }: ProjectP
           ))}
         </div>
         
-        <div className={`flex gap-3 ${reverse ? 'lg:justify-end' : ''}`}>
-          <Button variant="default" size="sm" asChild>
-            <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-              <ExternalLink className="h-4 w-4" />
-              {t.projects.liveDemo}
-            </a>
-          </Button>
-        </div>
+        { !hideDemoLink && (
+          <div className={`flex gap-3 ${reverse ? 'lg:justify-end' : ''}`}>
+            <Button variant="default" size="sm" asChild>
+              <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <ExternalLink className="h-4 w-4" />
+                {t.projects.liveDemo}
+              </a>
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -81,6 +83,7 @@ const Projects = () => {
               image={project.image}
               demoUrl={project.demoUrl}
               reverse={index % 2 !== 0}
+              hideDemoLink={project.hideDemoLink}
             />
           ))}
         </div>
