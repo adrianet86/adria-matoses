@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -56,7 +57,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-navy-light">
+    <section id="contact" className="navy-light-bg">
       <div className="section-container">
         <h2 className="section-title">{t.contact.title}</h2>
         
@@ -74,7 +75,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.linkedinLabel}</p>
-                  <a href={`https://${personalInfo.linkedin}`} target="_blank" rel="noopener noreferrer" className="text-white hover:text-teal transition-colors">
+                  <a href={`https://${personalInfo.linkedin}`} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-teal transition-colors">
                     {personalInfo.linkedin}
                   </a>
                 </div>
@@ -86,7 +87,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.githubLabel}</p>
-                  <a href={`https://${personalInfo.github}`} target="_blank" rel="noopener noreferrer" className="text-white hover:text-teal transition-colors">
+                  <a href={`https://${personalInfo.github}`} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-teal transition-colors">
                     {personalInfo.github}
                   </a>
                 </div>
@@ -98,7 +99,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.gitlabLabel}</p>
-                  <a href={`https://${personalInfo.gitlab}`} target="_blank" rel="noopener noreferrer" className="text-white hover:text-teal transition-colors">
+                  <a href={`https://${personalInfo.gitlab}`} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-teal transition-colors">
                     {personalInfo.gitlab}
                   </a>
                 </div>
@@ -107,7 +108,7 @@ const Contact = () => {
           </div>
           
           <div>
-            <form onSubmit={handleSubmit} className="bg-navy p-8 rounded-xl border border-muted shadow-lg">
+            <form onSubmit={handleSubmit} className="bg-card p-8 rounded-xl border border-muted shadow-lg">
               <div className="mb-6">
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   {t.contact.formName}
@@ -119,7 +120,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="bg-navy-light border-muted"
+                  className="bg-background border-muted"
                 />
               </div>
               
@@ -135,7 +136,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="bg-navy-light border-muted"
+                  className="bg-background border-muted"
                 />
               </div>
               
@@ -150,7 +151,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="min-h-[120px] bg-navy-light border-muted"
+                  className="min-h-[120px] bg-background border-muted"
                 />
               </div>
               

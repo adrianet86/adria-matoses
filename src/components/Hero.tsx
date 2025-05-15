@@ -15,13 +15,13 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 bg-navy">
+    <section id="home" className="min-h-screen flex items-center pt-20 navy-bg">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="space-y-6 animate-fade-in">
             <div className="space-y-2">
               <p className="text-teal text-lg font-mono">{t.hero.greeting}</p>
-              <h1 className="text-5xl sm:text-7xl font-bold text-white">
+              <h1 className="text-5xl sm:text-7xl font-bold text-foreground">
                 {personalInfo.name}
               </h1>
               <h2 className="text-3xl sm:text-5xl font-bold text-muted-foreground">
@@ -58,14 +58,14 @@ const Hero = () => {
           <div className="hidden lg:flex justify-center">
             <div className="w-[450px] h-[450px] relative">
               <div className="absolute inset-0 bg-teal/10 rounded-full blur-3xl"></div>
-              <div className="relative bg-navy-light border border-teal/20 rounded-xl overflow-hidden shadow-xl">
-                <div className="bg-navy-dark px-4 py-3 flex items-center gap-2 border-b border-muted">
+              <div className="relative bg-card border border-teal/20 rounded-xl overflow-hidden shadow-xl">
+                <div className="bg-muted px-4 py-3 flex items-center gap-2 border-b border-muted">
                   <div className="flex gap-1.5">
                     <div className="w-3 h-3 rounded-full bg-red-500"></div>
                     <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                     <div className="w-3 h-3 rounded-full bg-green-500"></div>
                   </div>
-                  <div className="text-xs text-center font-mono text-muted-foreground bg-navy-light/70 rounded px-2 py-1 flex-grow">
+                  <div className="text-xs text-center font-mono text-muted-foreground bg-card/70 rounded px-2 py-1 flex-grow">
                     developer.profile
                   </div>
                 </div>
@@ -74,22 +74,22 @@ const Hero = () => {
                   <div className="pl-4">
                     <div className="text-yellow-300">constructor() {"{"}</div>
                     <div className="pl-4">
-                      <div className="text-purple-400">this<span className="text-white">.</span>name <span className="text-white">=</span> <span className="text-green-300">"{personalInfo.name}"</span>;</div>
-                      <div className="text-purple-400">this<span className="text-white">.</span>title <span className="text-white">=</span> <span className="text-green-300">"{personalInfo.title[language]}"</span>;</div>
-                      <div className="text-purple-400">this<span className="text-white">.</span>location <span className="text-white">=</span> <span className="text-green-300">"{personalInfo.location[language]}"</span>;</div>
+                      <div className="text-purple-400">this<span className="text-foreground">.</span>name <span className="text-foreground">=</span> <span className="text-green-300">"{personalInfo.name}"</span>;</div>
+                      <div className="text-purple-400">this<span className="text-foreground">.</span>title <span className="text-foreground">=</span> <span className="text-green-300">"{personalInfo.title[language]}"</span>;</div>
+                      <div className="text-purple-400">this<span className="text-foreground">.</span>location <span className="text-foreground">=</span> <span className="text-green-300">"{personalInfo.location[language]}"</span>;</div>
                     </div>
                     <div className="text-yellow-300">{"}"}</div>
                   </div>
                   <div className="mt-2 pl-4">
                     <div className="text-blue-400">skills() {"{"}</div>
                     <div className="pl-4">
-                      <div className="text-purple-400">return <span className="text-white">[</span></div>
+                      <div className="text-purple-400">return <span className="text-foreground">[</span></div>
                       <div className="pl-4">
                         {personalInfo.skills.slice(0, 5).map((skill, i) => (
                           <div key={i} className="text-green-300">"{skill}"</div>
                         ))}
                       </div>
-                      <div className="text-purple-400 pl-2"><span className="text-white">]</span>;</div>
+                      <div className="text-purple-400 pl-2"><span className="text-foreground">]</span>;</div>
                     </div>
                     <div className="text-blue-400">{"}"}</div>
                   </div>

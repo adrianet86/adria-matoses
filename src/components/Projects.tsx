@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
@@ -20,7 +21,7 @@ const Project = ({ title, description, tags, image, demoUrl, reverse, hideDemoLi
   return (
     <div className={`grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center ${reverse ? 'lg:direction-rtl' : ''}`}>
       <div className={`lg:col-span-7 ${reverse ? 'lg:order-last' : ''}`}>
-        <div className="group relative overflow-hidden rounded-xl border border-muted bg-navy shadow-xl transition-all">
+        <div className="group relative overflow-hidden rounded-xl border border-muted bg-card shadow-xl transition-all">
           <div className="absolute inset-0 bg-gradient-to-br from-teal/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
           <img 
             src={image} 
@@ -32,8 +33,8 @@ const Project = ({ title, description, tags, image, demoUrl, reverse, hideDemoLi
       </div>
       
       <div className={`lg:col-span-5 ${reverse ? 'lg:text-right' : ''}`}>
-        <h3 className="text-2xl font-bold mb-3 text-white">{title}</h3>
-        <div className="bg-navy p-6 rounded-lg border border-muted shadow-lg mb-4">
+        <h3 className="text-2xl font-bold mb-3 text-foreground">{title}</h3>
+        <div className="bg-card p-6 rounded-lg border border-muted shadow-lg mb-4">
           <p className="text-muted-foreground">
             {description}
           </p>
@@ -41,7 +42,7 @@ const Project = ({ title, description, tags, image, demoUrl, reverse, hideDemoLi
         
         <div className={`flex flex-wrap gap-2 mb-4 ${reverse ? 'lg:justify-end' : ''}`}>
           {tags.map((tag) => (
-            <Badge key={tag} variant="outline" className="bg-navy border-teal/20">
+            <Badge key={tag} variant="outline" className="bg-card border-teal/20">
               {tag}
             </Badge>
           ))}
@@ -66,7 +67,7 @@ const Projects = () => {
   const { t, language } = useLanguage();
   
   return (
-    <section id="projects" className="bg-navy">
+    <section id="projects" className="navy-bg">
       <div className="section-container">
         <h2 className="section-title">{t.projects.title}</h2>
         <p className="text-muted-foreground mb-12 max-w-xl">

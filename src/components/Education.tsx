@@ -7,7 +7,7 @@ const Education = () => {
   const { t, language } = useLanguage();
 
   return (
-    <section id="education" className="bg-navy-light">
+    <section id="education" className="navy-light-bg">
       <div className="section-container">
         <h2 className="section-title">{t.education.title}</h2>
 
@@ -15,7 +15,7 @@ const Education = () => {
           {personalInfo.education.map((edu, index) => (
             <div 
               key={index}
-              className="bg-navy border border-muted rounded-lg p-6 hover:shadow-lg transition-all duration-300 flex flex-col"
+              className="bg-card border border-muted rounded-lg p-6 hover:shadow-lg transition-all duration-300 flex flex-col"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-teal/10 rounded-full">
@@ -26,7 +26,7 @@ const Education = () => {
                 </span>
               </div>
 
-              <h3 className="text-lg font-bold text-white">{edu.institution}</h3>
+              <h3 className="text-lg font-bold text-foreground">{edu.institution}</h3>
               <p className="text-teal mt-2">{edu.degree[language]}</p>
               {edu.location && (
                 <p className="text-sm text-muted-foreground mt-2">{edu.location}</p>

@@ -1,7 +1,9 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Mail, Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { personalInfo } from "@/data/personalInfo";
 
@@ -32,7 +34,7 @@ const Header = () => {
   return (
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-navy/95 backdrop-blur-sm shadow-md py-3" : "bg-transparent py-5"
+        isScrolled ? "bg-background/95 backdrop-blur-sm shadow-md py-3" : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-screen-xl mx-auto px-4 sm:px-8 flex justify-between items-center">
@@ -57,13 +59,17 @@ const Header = () => {
           <div className="ml-4">
             <LanguageSwitcher />
           </div>
+          <div className="ml-2">
+            <ThemeToggle />
+          </div>
         </nav>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-2">
+          <ThemeToggle />
           <LanguageSwitcher />
           <button 
-            className="text-white p-2"
+            className="text-foreground p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -74,7 +80,7 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-navy-dark shadow-xl animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 w-full bg-card shadow-xl animate-fade-in">
           <div className="flex flex-col p-4 space-y-4">
             <button onClick={() => scrollToSection("home")} className="nav-link text-left py-3">{t.header.home}</button>
             <button onClick={() => scrollToSection("about")} className="nav-link text-left py-3">{t.header.about}</button>

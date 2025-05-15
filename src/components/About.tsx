@@ -8,7 +8,7 @@ const About = () => {
   const { t, language } = useLanguage();
   
   return (
-    <section id="about" className="bg-navy-light">
+    <section id="about" className="navy-light-bg">
       <div className="section-container">
         <h2 className="section-title">{t.about.title}</h2>
         
@@ -32,7 +32,7 @@ const About = () => {
             
             <div className="flex flex-wrap gap-2 py-3">
               {personalInfo.skills.map(skill => (
-                <Badge key={skill} variant="outline" className="bg-navy border-teal/20">
+                <Badge key={skill} variant="outline" className="bg-card border-teal/20">
                   {skill}
                 </Badge>
               ))}
@@ -41,7 +41,7 @@ const About = () => {
           
           <div className="lg:col-span-2">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-navy p-6 rounded-lg border border-muted shadow-lg transform transition-all hover:-translate-y-1 hover:shadow-teal/5">
+              <div className="bg-card p-6 rounded-lg border border-muted shadow-lg transform transition-all hover:-translate-y-1 hover:shadow-teal/5">
                 <div className="bg-teal/10 p-3 rounded-full w-fit mb-3">
                   <Code className="h-6 w-6 text-teal" />
                 </div>
@@ -51,7 +51,7 @@ const About = () => {
                 </p>
               </div>
               
-              <div className="bg-navy p-6 rounded-lg border border-muted shadow-lg transform transition-all hover:-translate-y-1 hover:shadow-teal/5">
+              <div className="bg-card p-6 rounded-lg border border-muted shadow-lg transform transition-all hover:-translate-y-1 hover:shadow-teal/5">
                 <div className="bg-teal/10 p-3 rounded-full w-fit mb-3">
                   <Database className="h-6 w-6 text-teal" />
                 </div>
@@ -61,7 +61,7 @@ const About = () => {
                 </p>
               </div>
               
-              <div className="bg-navy p-6 rounded-lg border border-muted shadow-lg transform transition-all hover:-translate-y-1 hover:shadow-teal/5">
+              <div className="bg-card p-6 rounded-lg border border-muted shadow-lg transform transition-all hover:-translate-y-1 hover:shadow-teal/5">
                 <div className="bg-teal/10 p-3 rounded-full w-fit mb-3">
                   <Laptop className="h-6 w-6 text-teal" />
                 </div>
@@ -71,7 +71,7 @@ const About = () => {
                 </p>
               </div>
               
-              <div className="bg-navy p-6 rounded-lg border border-muted shadow-lg transform transition-all hover:-translate-y-1 hover:shadow-teal/5">
+              <div className="bg-card p-6 rounded-lg border border-muted shadow-lg transform transition-all hover:-translate-y-1 hover:shadow-teal/5">
                 <div className="bg-teal/10 p-3 rounded-full w-fit mb-3">
                   <Globe className="h-6 w-6 text-teal" />
                 </div>

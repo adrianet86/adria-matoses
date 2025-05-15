@@ -7,6 +7,40 @@
 
 @layer base {
   :root {
+    /* Light mode variables */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --primary: 169 74% 32%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 217 32% 92%;
+    --secondary-foreground: 222 47% 11%;
+    
+    --muted: 217 32% 92%;
+    --muted-foreground: 217 9% 35%;
+    
+    --accent: 169 74% 32%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217 32% 80%;
+    --input: 217 32% 80%;
+    --ring: 169 74% 32%;
+    
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    /* Dark mode variables (existing colors) */
     --background: 222 47% 11%;
     --foreground: 210 40% 98%;
 
@@ -34,8 +68,6 @@
     --border: 217 32% 17%;
     --input: 217 32% 17%;
     --ring: 169 74% 32%;
-
-    --radius: 0.5rem;
   }
 
   * {
@@ -47,7 +79,7 @@
   }
 
   body {
-    @apply bg-navy text-foreground font-sans;
+    @apply bg-background text-foreground font-sans;
   }
 
   ::selection {
@@ -61,7 +93,7 @@
   }
   
   .section-title {
-    @apply text-3xl sm:text-4xl font-bold mb-4 sm:mb-8 text-white relative inline-block;
+    @apply text-3xl sm:text-4xl font-bold mb-4 sm:mb-8 text-foreground relative inline-block;
   }
   
   .section-title::after {
@@ -73,10 +105,35 @@
   }
   
   .code-block {
-    @apply bg-navy-light rounded-md p-4 font-mono text-sm overflow-x-auto border border-muted;
+    @apply bg-card rounded-md p-4 font-mono text-sm overflow-x-auto border border-muted;
   }
   
   .gradient-text {
     @apply bg-gradient-to-r from-teal to-blue-400 bg-clip-text text-transparent;
+  }
+
+  /* Light/Dark specific styles */
+  .light .navy-bg {
+    @apply bg-slate-50;
+  }
+  
+  .light .navy-light-bg {
+    @apply bg-white;
+  }
+  
+  .light .navy-dark-bg {
+    @apply bg-slate-100;
+  }
+  
+  .dark .navy-bg {
+    @apply bg-navy;
+  }
+  
+  .dark .navy-light-bg {
+    @apply bg-navy-light;
+  }
+  
+  .dark .navy-dark-bg {
+    @apply bg-navy-dark;
   }
 }
