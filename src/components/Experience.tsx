@@ -13,7 +13,7 @@ const Experience = () => {
         
         <div className="mt-10">
           <div className="relative border-l-2 border-muted ml-3 pl-8 space-y-10">
-            {personalInfo.experience.map((job, index) => (
+            {personalInfo.experiences.map((job, index) => (
               <div key={index} className="relative">
                 <div className="absolute -left-[41px] bg-background border-4 border-teal rounded-full p-1">
                   <Briefcase className="h-4 w-4 text-teal" />
@@ -28,7 +28,7 @@ const Experience = () => {
                     </div>
                   </div>
                   
-                  <p className="text-teal mb-4">{job.title}</p>
+                  <p className="text-teal mb-4">{job.position[language]}</p>
                   
                   <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
                     {job.description[language].map((item, i) => (
