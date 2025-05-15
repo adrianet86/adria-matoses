@@ -38,7 +38,7 @@ const LanguageSwitcher = () => {
       <Button
         size="sm"
         variant="ghost"
-        className="h-8 px-2 text-xs gap-1.5 text-white hover:bg-white/10"
+        className="h-8 px-2 text-xs gap-1.5 text-foreground hover:bg-accent/50"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{currentLanguage?.name}</span>
@@ -46,12 +46,12 @@ const LanguageSwitcher = () => {
       </Button>
 
       {isOpen && (
-        <div className="absolute right-0 top-full mt-1 w-20 bg-navy-dark border border-gray-600 rounded-md shadow-xl z-50">
+        <div className="absolute right-0 top-full mt-1 w-20 bg-card border border-border rounded-md shadow-xl z-50">
           {languageOptions.map((lang) => (
             <button
               key={lang.code}
-              className={`w-full px-3 py-2 text-xs text-center text-white hover:bg-white/10 first:rounded-t-md last:rounded-b-md transition-colors ${
-                language === lang.code ? 'bg-white/10' : ''
+              className={`w-full px-3 py-2 text-xs text-center text-foreground hover:bg-accent/50 first:rounded-t-md last:rounded-b-md transition-colors ${
+                language === lang.code ? 'bg-accent/30' : ''
               }`}
               onClick={() => handleLanguageChange(lang.code)}
             >
