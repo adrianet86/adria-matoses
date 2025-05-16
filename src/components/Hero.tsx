@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowDownCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -27,16 +26,6 @@ const Hero = () => {
               <h2 className="text-3xl sm:text-5xl font-bold text-muted-foreground">
                 {t.hero.jobTitle}
               </h2>
-            </div>
-
-            <div className="code-block">
-              <pre className="text-code-foreground dark:text-gray-200 text-gray-700">
-                <code>{`const developer = {
-  skills: ["PHP", "Symfony", "TypeScript", "DevOps"],
-  passion: "${t.hero.passion}",
-  currentlyLearning: "${t.hero.currentlyLearning}"
-};`}</code>
-              </pre>
             </div>
 
             <p className="text-muted-foreground text-lg max-w-xl">

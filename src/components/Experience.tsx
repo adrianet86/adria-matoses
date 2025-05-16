@@ -1,14 +1,35 @@
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import { personalInfo } from "@/data/personalInfo";
-import { Briefcase, Calendar } from "lucide-react";
+import { Briefcase, Calendar, ChevronDown, ChevronUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
+import { 
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 const Experience = () => {
   const { t, language } = useLanguage();
+  // Track which job descriptions are expanded (only for mobile/click)
+  const [expandedJobs, setExpandedJobs] = useState<number[]>([]);
+  
   // Get the first (current) job and the rest of the jobs
   const currentJob = personalInfo.experiences[0];
   const otherJobs = personalInfo.experiences.slice(1);
+  
+  // Toggle expanded state for a job
+  const toggleJobExpanded = (index: number) => {
+    setExpandedJobs(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index) 
+        : [...prev, index]
+    );
+  };
+
+  // Check if a job is expanded
+  const isExpanded = (index: number) => expandedJobs.includes(index);
 
   return (
     <section id="experience" className="navy-bg relative">
@@ -67,6 +88,7 @@ const Experience = () => {
               </div>
             </div>
             
+            {/* Desktop: Hover Card, Mobile: Expandable Card */}
             <div className="z-20 relative bg-card border border-muted rounded-lg p-6 hover:shadow-lg transition-all duration-300">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
                 <h3 className="text-xl font-bold text-foreground">{currentJob.company}</h3>
@@ -86,11 +108,45 @@ const Experience = () => {
                 ))}
               </div>
               
-              <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-                {currentJob.description[language].map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
+              {/* Desktop: Show on hover */}
+              <div className="hidden md:block">
+                <HoverCard openDelay={100} closeDelay={200}>
+                  <HoverCardTrigger asChild>
+                    <button className="w-full py-2 px-4 bg-teal/10 text-teal rounded-lg hover:bg-teal/20 transition-colors flex items-center justify-center">
+                      <span>{t.experience.viewDetails}</span>
+                      <ChevronDown className="ml-2 h-4 w-4" />
+                    </button>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="w-full max-w-md">
+                    <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
+                      {currentJob.description[language].map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </HoverCardContent>
+                </HoverCard>
+              </div>
+              
+              {/* Mobile: Expand on click */}
+              <div className="md:hidden">
+                <button 
+                  onClick={() => toggleJobExpanded(0)}
+                  className="w-full py-2 px-4 bg-teal/10 text-teal rounded-lg hover:bg-teal/20 transition-colors flex items-center justify-center"
+                >
+                  <span>{isExpanded(0) ? t.experience.hideDetails : t.experience.viewDetails}</span>
+                  {isExpanded(0) ? <ChevronUp className="ml-2 h-4 w-4" /> : <ChevronDown className="ml-2 h-4 w-4" />}
+                </button>
+                
+                {isExpanded(0) && (
+                  <div className="mt-4 animate-accordion-down">
+                    <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
+                      {currentJob.description[language].map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
@@ -124,11 +180,45 @@ const Experience = () => {
                     ))}
                   </div>
                   
-                  <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-                    {job.description[language].map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
+                  {/* Desktop: Show on hover */}
+                  <div className="hidden md:block">
+                    <HoverCard openDelay={100} closeDelay={200}>
+                      <HoverCardTrigger asChild>
+                        <button className="w-full py-2 px-4 bg-teal/10 text-teal rounded-lg hover:bg-teal/20 transition-colors flex items-center justify-center">
+                          <span>{t.experience.viewDetails}</span>
+                          <ChevronDown className="ml-2 h-4 w-4" />
+                        </button>
+                      </HoverCardTrigger>
+                      <HoverCardContent className="w-full max-w-md">
+                        <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
+                          {job.description[language].map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      </HoverCardContent>
+                    </HoverCard>
+                  </div>
+                  
+                  {/* Mobile: Expand on click */}
+                  <div className="md:hidden">
+                    <button 
+                      onClick={() => toggleJobExpanded(index + 1)}
+                      className="w-full py-2 px-4 bg-teal/10 text-teal rounded-lg hover:bg-teal/20 transition-colors flex items-center justify-center"
+                    >
+                      <span>{isExpanded(index + 1) ? t.experience.hideDetails : t.experience.viewDetails}</span>
+                      {isExpanded(index + 1) ? <ChevronUp className="ml-2 h-4 w-4" /> : <ChevronDown className="ml-2 h-4 w-4" />}
+                    </button>
+                    
+                    {isExpanded(index + 1) && (
+                      <div className="mt-4 animate-accordion-down">
+                        <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
+                          {job.description[language].map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
