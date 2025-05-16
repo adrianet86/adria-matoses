@@ -31,6 +31,10 @@ const Experience = () => {
   // Check if a job is expanded
   const isExpanded = (index: number) => expandedJobs.includes(index);
 
+  // Define the view/hide details text here instead of using translations that don't exist
+  const viewDetailsText = language === 'en' ? 'View Details' : (language === 'es' ? 'Ver Detalles' : 'Veure Detalls');
+  const hideDetailsText = language === 'en' ? 'Hide Details' : (language === 'es' ? 'Ocultar Detalles' : 'Amagar Detalls');
+
   return (
     <section id="experience" className="navy-bg relative">
       <div className="section-container">
@@ -113,7 +117,7 @@ const Experience = () => {
                 <HoverCard openDelay={100} closeDelay={200}>
                   <HoverCardTrigger asChild>
                     <button className="w-full py-2 px-4 bg-teal/10 text-teal rounded-lg hover:bg-teal/20 transition-colors flex items-center justify-center">
-                      <span>{t.experience.viewDetails}</span>
+                      <span>{viewDetailsText}</span>
                       <ChevronDown className="ml-2 h-4 w-4" />
                     </button>
                   </HoverCardTrigger>
@@ -133,7 +137,7 @@ const Experience = () => {
                   onClick={() => toggleJobExpanded(0)}
                   className="w-full py-2 px-4 bg-teal/10 text-teal rounded-lg hover:bg-teal/20 transition-colors flex items-center justify-center"
                 >
-                  <span>{isExpanded(0) ? t.experience.hideDetails : t.experience.viewDetails}</span>
+                  <span>{isExpanded(0) ? hideDetailsText : viewDetailsText}</span>
                   {isExpanded(0) ? <ChevronUp className="ml-2 h-4 w-4" /> : <ChevronDown className="ml-2 h-4 w-4" />}
                 </button>
                 
@@ -185,7 +189,7 @@ const Experience = () => {
                     <HoverCard openDelay={100} closeDelay={200}>
                       <HoverCardTrigger asChild>
                         <button className="w-full py-2 px-4 bg-teal/10 text-teal rounded-lg hover:bg-teal/20 transition-colors flex items-center justify-center">
-                          <span>{t.experience.viewDetails}</span>
+                          <span>{viewDetailsText}</span>
                           <ChevronDown className="ml-2 h-4 w-4" />
                         </button>
                       </HoverCardTrigger>
@@ -205,7 +209,7 @@ const Experience = () => {
                       onClick={() => toggleJobExpanded(index + 1)}
                       className="w-full py-2 px-4 bg-teal/10 text-teal rounded-lg hover:bg-teal/20 transition-colors flex items-center justify-center"
                     >
-                      <span>{isExpanded(index + 1) ? t.experience.hideDetails : t.experience.viewDetails}</span>
+                      <span>{isExpanded(index + 1) ? hideDetailsText : viewDetailsText}</span>
                       {isExpanded(index + 1) ? <ChevronUp className="ml-2 h-4 w-4" /> : <ChevronDown className="ml-2 h-4 w-4" />}
                     </button>
                     
