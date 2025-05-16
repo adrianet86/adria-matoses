@@ -16,7 +16,7 @@ const Experience = () => {
         <h2 className="section-title">{t.experience.title}</h2>
         
         <div className="mt-10 relative">
-          {/* The flowing river path - improved version */}
+          {/* The flowing river path - connecting briefcase icons */}
           <div className="absolute hidden md:block w-full h-full top-0 left-0 pointer-events-none" aria-hidden="true">
             <svg className="absolute w-full h-full" viewBox="0 0 1200 2000" preserveAspectRatio="none">
               <defs>
@@ -26,9 +26,9 @@ const Experience = () => {
                 </linearGradient>
               </defs>
               
-              {/* Main flowing path */}
+              {/* Main flowing path - modified to connect briefcase icons */}
               <path 
-                d="M600,0 Q800,400 400,800 Q200,1200 600,1600 Q900,2000 600,2000"
+                d="M600,100 C600,100 800,400 400,800 C200,1200 600,1600 600,1600"
                 fill="none" 
                 stroke="url(#riverGradient)" 
                 strokeWidth="8"
@@ -38,7 +38,7 @@ const Experience = () => {
               
               {/* Additional decorative ripples along the river */}
               <path 
-                d="M600,0 Q790,410 390,810 Q190,1210 590,1610 Q890,2010 590,2010" 
+                d="M600,100 C600,100 790,410 390,810 C190,1210 590,1610 590,1610" 
                 fill="none" 
                 stroke="url(#riverGradient)" 
                 strokeWidth="3"
@@ -48,7 +48,7 @@ const Experience = () => {
               />
               
               <path 
-                d="M600,0 Q810,390 410,790 Q210,1190 610,1590 Q910,1990 610,1990" 
+                d="M600,100 C600,100 810,390 410,790 C210,1190 610,1590 610,1590" 
                 fill="none" 
                 stroke="url(#riverGradient)" 
                 strokeWidth="3"
@@ -62,12 +62,12 @@ const Experience = () => {
           {/* Current job - full width */}
           <div className="mb-20">
             <div className="relative flex justify-center">
-              <div className="z-10 bg-background border-4 border-teal rounded-full p-2 shadow-lg mb-6">
+              <div className="z-30 bg-background border-4 border-teal rounded-full p-2 shadow-lg mb-6">
                 <Briefcase className="h-6 w-6 text-teal" />
               </div>
             </div>
             
-            <div className="bg-card border border-muted rounded-lg p-6 hover:shadow-lg transition-all duration-300">
+            <div className="z-20 relative bg-card border border-muted rounded-lg p-6 hover:shadow-lg transition-all duration-300">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
                 <h3 className="text-xl font-bold text-foreground">{currentJob.company}</h3>
                 <div className="flex items-center text-muted-foreground text-sm mt-1 sm:mt-0">
@@ -100,7 +100,7 @@ const Experience = () => {
               <div key={index} className="relative">
                 {/* Position the circles along the river path */}
                 <div className="flex justify-center">
-                  <div className="z-10 bg-background border-4 border-teal rounded-full p-2 shadow-lg mb-6">
+                  <div className="z-30 bg-background border-4 border-teal rounded-full p-2 shadow-lg mb-6">
                     <Briefcase className="h-6 w-6 text-teal" />
                   </div>
                 </div>
