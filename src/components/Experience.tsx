@@ -1,3 +1,4 @@
+
 import { useLanguage } from "@/contexts/LanguageContext";
 import { personalInfo } from "@/data/personalInfo";
 import { Briefcase, Calendar } from "lucide-react";
@@ -15,28 +16,46 @@ const Experience = () => {
         <h2 className="section-title">{t.experience.title}</h2>
         
         <div className="mt-10 relative">
-          {/* The flowing river path */}
-          <div className="absolute hidden md:block" aria-hidden="true">
-            <div className="h-full w-16 left-1/2 transform -translate-x-1/2 absolute">
-              <div className="h-full w-2 bg-gradient-to-b from-teal to-teal-dark absolute left-1/2 transform -translate-x-1/2 rounded-full"></div>
-            </div>
-            
-            {/* Wavy path effect */}
-            <svg className="absolute left-1/2 transform -translate-x-1/2 top-0 w-16 h-full" width="100%" height="100%" viewBox="0 0 100 1000" preserveAspectRatio="none">
-              <path 
-                d="M50,0 Q70,200 30,400 Q10,600 50,800 Q90,1000 50,1200" 
-                fill="none" 
-                stroke="url(#riverGradient)" 
-                strokeWidth="6"
-                strokeLinecap="round"
-                className="opacity-70" 
-              />
+          {/* The flowing river path - improved version */}
+          <div className="absolute hidden md:block w-full h-full top-0 left-0 pointer-events-none" aria-hidden="true">
+            <svg className="absolute w-full h-full" viewBox="0 0 1200 2000" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="riverGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop offset="0%" stopColor="#0d9488" />
                   <stop offset="100%" stopColor="#0f766e" />
                 </linearGradient>
               </defs>
+              
+              {/* Main flowing path */}
+              <path 
+                d="M600,0 Q800,400 400,800 Q200,1200 600,1600 Q900,2000 600,2000"
+                fill="none" 
+                stroke="url(#riverGradient)" 
+                strokeWidth="8"
+                strokeLinecap="round"
+                className="opacity-70"
+              />
+              
+              {/* Additional decorative ripples along the river */}
+              <path 
+                d="M600,0 Q790,410 390,810 Q190,1210 590,1610 Q890,2010 590,2010" 
+                fill="none" 
+                stroke="url(#riverGradient)" 
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeDasharray="10,15"
+                className="opacity-40" 
+              />
+              
+              <path 
+                d="M600,0 Q810,390 410,790 Q210,1190 610,1590 Q910,1990 610,1990" 
+                fill="none" 
+                stroke="url(#riverGradient)" 
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeDasharray="5,20"
+                className="opacity-30" 
+              />
             </svg>
           </div>
           
@@ -79,6 +98,7 @@ const Experience = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-20">
             {otherJobs.map((job, index) => (
               <div key={index} className="relative">
+                {/* Position the circles along the river path */}
                 <div className="flex justify-center">
                   <div className="z-10 bg-background border-4 border-teal rounded-full p-2 shadow-lg mb-6">
                     <Briefcase className="h-6 w-6 text-teal" />
