@@ -1,17 +1,53 @@
+
 import { useLanguage } from "@/contexts/LanguageContext";
 import { personalInfo } from "@/data/personalInfo";
 import { Briefcase, Calendar, ChevronDown, ChevronUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const Experience = () => {
   const { t, language } = useLanguage();
   // Track which job descriptions are expanded (for all screen sizes)
   const [expandedJobs, setExpandedJobs] = useState<number[]>([]);
+  // Track which cards are visible for animations
+  const [visibleCards, setVisibleCards] = useState<number[]>([]);
+  
+  // Refs to observe the cards
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   
   // Get the first (current) job and the rest of the jobs
   const currentJob = personalInfo.experiences[0];
   const otherJobs = personalInfo.experiences.slice(1);
+  
+  // Setup intersection observer for animation
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    
+    // Configure the observer for each card
+    cardRefs.current.forEach((card, index) => {
+      if (card) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Add a small delay based on index for cascading effect
+              setTimeout(() => {
+                setVisibleCards(prev => [...prev, index]);
+              }, index * 100);
+              observer.unobserve(card);
+            }
+          });
+        }, { threshold: 0.2 });
+        
+        observer.observe(card);
+        observers.push(observer);
+      }
+    });
+    
+    // Cleanup observers
+    return () => {
+      observers.forEach(obs => obs.disconnect());
+    };
+  }, []);
   
   // Toggle expanded state for a job
   const toggleJobExpanded = (index: number) => {
@@ -28,6 +64,13 @@ const Experience = () => {
   // Define the view/hide details text here instead of using translations that don't exist
   const viewDetailsText = language === 'en' ? 'View Details' : (language === 'es' ? 'Ver Detalles' : 'Veure Detalls');
   const hideDetailsText = language === 'en' ? 'Hide Details' : (language === 'es' ? 'Ocultar Detalles' : 'Amagar Detalls');
+
+  // Helper function to get animation classes
+  const getCardAnimationClass = (index: number) => {
+    return visibleCards.includes(index) 
+      ? "opacity-100 translate-y-0 transition-all duration-700 ease-out" 
+      : "opacity-0 translate-y-8 transition-all duration-700 ease-out";
+  };
 
   return (
     <section id="experience" className="navy-bg relative">
@@ -86,8 +129,11 @@ const Experience = () => {
               </div>
             </div>
             
-            {/* Expandable Card */}
-            <div className="z-20 relative bg-card border border-muted rounded-lg p-6 hover:shadow-lg transition-all duration-300">
+            {/* Expandable Card with Animation */}
+            <div 
+              ref={el => cardRefs.current[0] = el}
+              className={`z-20 relative bg-card border border-muted rounded-lg p-6 hover:shadow-lg transition-all duration-300 ${getCardAnimationClass(0)}`}
+            >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
                 <h3 className="text-xl font-bold text-foreground">{currentJob.company}</h3>
                 <div className="flex items-center text-muted-foreground text-sm mt-1 sm:mt-0">
@@ -138,7 +184,10 @@ const Experience = () => {
                   </div>
                 </div>
                 
-                <div className="bg-card border border-muted rounded-lg p-6 hover:shadow-lg transition-all duration-300">
+                <div 
+                  ref={el => cardRefs.current[index + 1] = el}
+                  className={`bg-card border border-muted rounded-lg p-6 hover:shadow-lg transition-all duration-300 ${getCardAnimationClass(index + 1)}`}
+                >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
                     <h3 className="text-xl font-bold text-foreground">{job.company}</h3>
                     <div className="flex items-center text-muted-foreground text-sm mt-1 sm:mt-0">

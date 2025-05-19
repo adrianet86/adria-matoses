@@ -2,9 +2,52 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { personalInfo } from "@/data/personalInfo";
 import { School, Calendar } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
 
 const Education = () => {
   const { t, language } = useLanguage();
+  // Track which cards are visible for animations
+  const [visibleCards, setVisibleCards] = useState<number[]>([]);
+  
+  // Refs to observe the cards
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Setup intersection observer for animation
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    
+    // Configure the observer for each card
+    cardRefs.current.forEach((card, index) => {
+      if (card) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Add a small delay based on index for cascading effect
+              setTimeout(() => {
+                setVisibleCards(prev => [...prev, index]);
+              }, index * 150);
+              observer.unobserve(card);
+            }
+          });
+        }, { threshold: 0.2 });
+        
+        observer.observe(card);
+        observers.push(observer);
+      }
+    });
+    
+    // Cleanup observers
+    return () => {
+      observers.forEach(obs => obs.disconnect());
+    };
+  }, []);
+
+  // Helper function to get animation classes
+  const getCardAnimationClass = (index: number) => {
+    return visibleCards.includes(index) 
+      ? "opacity-100 translate-y-0 transition-all duration-700 ease-out" 
+      : "opacity-0 translate-y-8 transition-all duration-700 ease-out";
+  };
 
   return (
     <section id="education" className="navy-light-bg">
@@ -15,7 +58,8 @@ const Education = () => {
           {personalInfo.education.map((edu, index) => (
             <div 
               key={index}
-              className="bg-card border border-muted rounded-lg p-6 hover:shadow-lg transition-all duration-300 flex flex-col"
+              ref={el => cardRefs.current[index] = el}
+              className={`bg-card border border-muted rounded-lg p-6 hover:shadow-lg transition-all duration-300 flex flex-col ${getCardAnimationClass(index)}`}
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-teal/10 rounded-full">
